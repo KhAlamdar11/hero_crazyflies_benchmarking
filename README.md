@@ -2,6 +2,7 @@
 
 This work accompanies sim2real framework for benchmarking connectivity and battery aware algorithms with Crazyflie UAVs. It is supporting both simulation using CrazySim + Gazebo and real hardware experiments.
 
+<img width="1017" height="1311" alt="ICUAS_ARCH_vert" src="https://github.com/user-attachments/assets/f16c46ab-3097-4005-af72-0e34d4a4549b" />
 
 
 
