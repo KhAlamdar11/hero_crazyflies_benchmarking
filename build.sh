@@ -10,6 +10,6 @@ fi
 
 IMAGE_NAME="crazy_${TYPE}"
 
-docker build --target "$TYPE" -t "$IMAGE_NAME" .
+docker build --ssh default --target "$TYPE" -t "$IMAGE_NAME" .
 
 echo "Built $IMAGE_NAME"

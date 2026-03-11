@@ -11,9 +11,10 @@ windows:
         - waitForCfsGazebo;sleep 1;bash ./generate_gazebo_bridge_yaml.sh $NUM_ROBOTS; ros2 launch hero_crazyflies_benchmarking system_launch.py
         - waitForCfsGazebo;sleep 3;ros2 launch hero_crazyflies_benchmarking aruco_recognition.launch.py
         - waitForCfsGazebo;sleep 6;ros2 launch hero_crazyflies_benchmarking octomap_server.launch.py
-  - topic_pane:
+  - eval_pane:
       layout: tiled
       panes:
         - history -s "ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/cf_1/cmd_vel"
+        - waitForCfsGazebo;sleep 5;ros2 launch hero_evaluation_benchmarking launch.py
 
  

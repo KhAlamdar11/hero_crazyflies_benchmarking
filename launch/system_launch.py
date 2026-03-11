@@ -151,14 +151,14 @@ def generate_launch_description():
                 output='screen',
                 parameters = [{'config_file': gz_bridge_yaml}]))
         
-    launch_description.append(       
-        Node(
-            package='rviz2',
-            namespace='',
-            executable='rviz2',
-            name='rviz2',
-            arguments=['-d' + os.path.join(get_package_share_directory('hero_crazyflies_benchmarking'), 'config', 'config.rviz')]
-        )
+    # launch_description.append(       
+    #     Node(
+    #         package='rviz2',
+    #         namespace='',
+    #         executable='rviz2',
+    #         name='rviz2',
+    #         arguments=['-d' + os.path.join(get_package_share_directory('hero_crazyflies_benchmarking'), 'config', 'config.rviz')]
+    #     )
         
-    )
+    # )
     return LaunchDescription(launch_description)

@@ -72,4 +72,22 @@ docker run -it \
     --privileged \
     --gpus all \
     --name "$CONTAINER_NAME" \
-    "$IMAGE_NAME"
+    "$IMAGE_NAME" \
+    bash -c "
+
+        source /opt/ros/\$ROS2_DISTRO/setup.bash
+
+        cd /root/ros2_ws
+
+        # Build workspace if not built
+        if [ ! -d install ]; then
+            echo 'Building ROS2 workspace...'
+            colcon build --symlink-install
+        else
+            echo 'Workspace already built.'
+        fi
+
+        source install/setup.bash
+
+        exec bash
+    "

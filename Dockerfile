@@ -179,6 +179,8 @@ RUN mkdir -p $HOME/ros2_ws/src \
     && git clone https://github.com/larics/icuas25_msgs.git \
     && git clone --recurse-submodules https://github.com/IMRCLab/motion_capture_tracking.git
 
+RUN --mount=type=ssh cd $HOME/ros2_ws/src && git clone git@github.com:larics/hero_evaluation_benchmarking.git
+
 
 # Bash environment & aliases
 RUN echo "alias ros2_ws='source $HOME/ros2_ws/install/setup.bash'" >> $HOME/.bashrc && \
