@@ -17,7 +17,7 @@ if [[ "$TYPE" != "sim" && "$TYPE" != "real" ]]; then
 fi
 
 IMAGE_NAME="crazy_${TYPE}"
-CONTAINER_NAME="crazy_${TYPE}_container"
+CONTAINER_NAME="crazy_test_${TYPE}_container"
 
 
 # X11 setup
@@ -68,6 +68,12 @@ docker run -it \
     --volume /var/run/dbus:/var/run/dbus:z \
     --volume ~/.ssh/ssh_auth_sock:/ssh-agent \
     --volume "$(pwd)":/root/ros2_ws/src/hero_crazyflies_benchmarking:rw \
+    --volume "/home/khawaja/HERO/hero_mrs_control_stack:/root/ros2_ws/src/hero_mrs_control_stack:rw" \
+    --volume "/home/khawaja/HERO/meta_packages_hero/icuas26_evaluation:/root/ros2_ws/src/icuas26_evaluation:rw" \
+    --volume "/home/khawaja/HERO/meta_packages_hero/crazyflie_hardware_utils:/root/ros2_ws/src/crazyflie_hardware_utils:rw" \
+    --volume "/home/khawaja/HERO/meta_packages_hero/agilex_sitl/agilex_sitl:/root/ros2_ws/src/agilex_sitl:rw" \
+    --volume "/home/khawaja/HERO/meta_packages_hero/agilex_sitl/hero_sitl:/root/ros2_ws/src/hero_sitl:rw" \
+    --volume "/home/khawaja/HERO/meta_packages_hero/agilex_sitl/dummy_crazyflie_server:/root/ros2_ws/src/dummy_crazyflie_server:rw" \
     --net host \
     --privileged \
     --gpus all \

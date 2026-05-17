@@ -322,3 +322,318 @@
   lazy: false
   direction: ROS_TO_GZ
 
+- ros_topic_name: "cf_6/camera_info"
+  gz_topic_name: "cf_5/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "ignition.msgs.CameraInfo"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_6/image"
+  gz_topic_name: "cf_5/camera"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_6/battery_status"
+  gz_topic_name: "model/crazyflie_5/battery/linear_battery/state"
+  ros_type_name: "sensor_msgs/msg/BatteryState"
+  gz_type_name: "ignition.msgs.BatteryState"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_6/battery_charge/start"
+  gz_topic_name: "model/crazyflie_5/battery/linear_battery/recharge/start"
+  ros_type_name: "std_msgs/msg/Bool"
+  gz_type_name: "ignition.msgs.Boolean"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_6/battery_charge/stop"
+  gz_topic_name: "model/crazyflie_5/battery/linear_battery/recharge/stop"
+  ros_type_name: "std_msgs/msg/Bool"
+  gz_type_name: "ignition.msgs.Boolean"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_6/start_power_drain"
+  gz_topic_name: "cf_5/start_power_drain"
+  ros_type_name: "std_msgs/msg/Empty"
+  gz_type_name: "ignition.msgs.Empty"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_6/stop_power_drain"
+  gz_topic_name: "cf_5/stop_power_drain"
+  ros_type_name: "std_msgs/msg/Empty"
+  gz_type_name: "ignition.msgs.Empty"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_7/camera_info"
+  gz_topic_name: "cf_6/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "ignition.msgs.CameraInfo"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_7/image"
+  gz_topic_name: "cf_6/camera"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_7/battery_status"
+  gz_topic_name: "model/crazyflie_6/battery/linear_battery/state"
+  ros_type_name: "sensor_msgs/msg/BatteryState"
+  gz_type_name: "ignition.msgs.BatteryState"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_7/battery_charge/start"
+  gz_topic_name: "model/crazyflie_6/battery/linear_battery/recharge/start"
+  ros_type_name: "std_msgs/msg/Bool"
+  gz_type_name: "ignition.msgs.Boolean"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_7/battery_charge/stop"
+  gz_topic_name: "model/crazyflie_6/battery/linear_battery/recharge/stop"
+  ros_type_name: "std_msgs/msg/Bool"
+  gz_type_name: "ignition.msgs.Boolean"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_7/start_power_drain"
+  gz_topic_name: "cf_6/start_power_drain"
+  ros_type_name: "std_msgs/msg/Empty"
+  gz_type_name: "ignition.msgs.Empty"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_7/stop_power_drain"
+  gz_topic_name: "cf_6/stop_power_drain"
+  ros_type_name: "std_msgs/msg/Empty"
+  gz_type_name: "ignition.msgs.Empty"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_8/camera_info"
+  gz_topic_name: "cf_7/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "ignition.msgs.CameraInfo"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_8/image"
+  gz_topic_name: "cf_7/camera"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_8/battery_status"
+  gz_topic_name: "model/crazyflie_7/battery/linear_battery/state"
+  ros_type_name: "sensor_msgs/msg/BatteryState"
+  gz_type_name: "ignition.msgs.BatteryState"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_8/battery_charge/start"
+  gz_topic_name: "model/crazyflie_7/battery/linear_battery/recharge/start"
+  ros_type_name: "std_msgs/msg/Bool"
+  gz_type_name: "ignition.msgs.Boolean"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_8/battery_charge/stop"
+  gz_topic_name: "model/crazyflie_7/battery/linear_battery/recharge/stop"
+  ros_type_name: "std_msgs/msg/Bool"
+  gz_type_name: "ignition.msgs.Boolean"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_8/start_power_drain"
+  gz_topic_name: "cf_7/start_power_drain"
+  ros_type_name: "std_msgs/msg/Empty"
+  gz_type_name: "ignition.msgs.Empty"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_8/stop_power_drain"
+  gz_topic_name: "cf_7/stop_power_drain"
+  ros_type_name: "std_msgs/msg/Empty"
+  gz_type_name: "ignition.msgs.Empty"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_9/camera_info"
+  gz_topic_name: "cf_8/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "ignition.msgs.CameraInfo"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_9/image"
+  gz_topic_name: "cf_8/camera"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_9/battery_status"
+  gz_topic_name: "model/crazyflie_8/battery/linear_battery/state"
+  ros_type_name: "sensor_msgs/msg/BatteryState"
+  gz_type_name: "ignition.msgs.BatteryState"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_9/battery_charge/start"
+  gz_topic_name: "model/crazyflie_8/battery/linear_battery/recharge/start"
+  ros_type_name: "std_msgs/msg/Bool"
+  gz_type_name: "ignition.msgs.Boolean"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_9/battery_charge/stop"
+  gz_topic_name: "model/crazyflie_8/battery/linear_battery/recharge/stop"
+  ros_type_name: "std_msgs/msg/Bool"
+  gz_type_name: "ignition.msgs.Boolean"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_9/start_power_drain"
+  gz_topic_name: "cf_8/start_power_drain"
+  ros_type_name: "std_msgs/msg/Empty"
+  gz_type_name: "ignition.msgs.Empty"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_9/stop_power_drain"
+  gz_topic_name: "cf_8/stop_power_drain"
+  ros_type_name: "std_msgs/msg/Empty"
+  gz_type_name: "ignition.msgs.Empty"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_10/camera_info"
+  gz_topic_name: "cf_9/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "ignition.msgs.CameraInfo"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_10/image"
+  gz_topic_name: "cf_9/camera"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_10/battery_status"
+  gz_topic_name: "model/crazyflie_9/battery/linear_battery/state"
+  ros_type_name: "sensor_msgs/msg/BatteryState"
+  gz_type_name: "ignition.msgs.BatteryState"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "cf_10/battery_charge/start"
+  gz_topic_name: "model/crazyflie_9/battery/linear_battery/recharge/start"
+  ros_type_name: "std_msgs/msg/Bool"
+  gz_type_name: "ignition.msgs.Boolean"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_10/battery_charge/stop"
+  gz_topic_name: "model/crazyflie_9/battery/linear_battery/recharge/stop"
+  ros_type_name: "std_msgs/msg/Bool"
+  gz_type_name: "ignition.msgs.Boolean"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_10/start_power_drain"
+  gz_topic_name: "cf_9/start_power_drain"
+  ros_type_name: "std_msgs/msg/Empty"
+  gz_type_name: "ignition.msgs.Empty"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "cf_10/stop_power_drain"
+  gz_topic_name: "cf_9/stop_power_drain"
+  ros_type_name: "std_msgs/msg/Empty"
+  gz_type_name: "ignition.msgs.Empty"
+  subscriber_queue: 10
+  publisher_queue: 10
+  lazy: false
+  direction: ROS_TO_GZ
+

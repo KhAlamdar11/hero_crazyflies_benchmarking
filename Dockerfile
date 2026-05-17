@@ -228,6 +228,24 @@ RUN git clone https://github.com/gtfactslab/CrazySim.git \
     && cd crazyflie-lib-python \
     && pip install -e .
 
+# Layer 3: increase cflib resend timeout from 0.2s -> 1.0s.
+# At low Gazebo RTF the firmware (sim-time paced) takes longer than 0.2s to
+# answer cflib's TOC/param queries; the default fires resends every 0.2s and
+# floods the firmware, making it even slower. 1.0s breaks that feedback loop.
+RUN sed -i 's/def send_packet(self, pk, expected_reply=(), resend=False, timeout=0.2):/def send_packet(self, pk, expected_reply=(), resend=False, timeout=1.0):/' \
+    $HOME/CrazySim/crazyflie-lib-python/cflib/crazyflie/__init__.py \
+    && grep -q "timeout=1.0" $HOME/CrazySim/crazyflie-lib-python/cflib/crazyflie/__init__.py \
+    || (echo "FAILED: cflib send_packet timeout sed patch did not apply" && exit 1)
+
+# Layer 1: patched Gazebo plugin (unified blocking queue, sleeps instead of busy-wait,
+# 256-element capacity). Must overlay BEFORE the firmware/plugin compile step below.
+# Header is overlaid too because the pinned upstream commit predates fields used
+# by the patched .cpp (cfLibAddrInitialized_, recvCfLib signature).
+COPY to_copy/crazysim_plugin/crazysim_plugin.cpp \
+     $HOME/CrazySim/crazyflie-firmware/tools/crazyflie-simulation/simulator_files/gazebo/plugins/CrazySim/crazysim_plugin.cpp
+COPY to_copy/crazysim_plugin/crazysim_plugin.h \
+     $HOME/CrazySim/crazyflie-firmware/tools/crazyflie-simulation/simulator_files/gazebo/plugins/CrazySim/crazysim_plugin.h
+
 RUN pip install Jinja2
 RUN cd $HOME/CrazySim/crazyflie-firmware \
     &&  mkdir -p sitl_make/build && cd sitl_make/build \

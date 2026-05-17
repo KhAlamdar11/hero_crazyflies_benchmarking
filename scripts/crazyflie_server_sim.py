@@ -259,14 +259,35 @@ class CrazyflieServer(Node):
             self.swarm._cfs[link_uri].reference_frame = reference_frame
 
         # Now all crazyflies are initialized, open links!
+        # Open in batches with a delay between batches so the firmware (which runs at
+        # sim-time, slowed down by Gazebo RTF) can finish the TOC/param handshake for
+        # one batch before the next batch starts competing for CRTP service time.
+        # Controlled by ROS params:
+        #   connection_batch_size       (default 1 = fully sequential)
+        #   connection_batch_delay_sec  (default 1.0)
+        batch_size = int(self._ros_parameters.get("connection_batch_size", 1))
+        batch_delay = float(self._ros_parameters.get("connection_batch_delay_sec", 1.0))
+        if batch_size < 1:
+            batch_size = 1
+
         try:
             self.time_open_link = self.get_clock().now().nanoseconds * 1e-9
-            self.swarm.open_links()
+            self.get_logger().info(
+                f"Opening {len(self.uris)} links in batches of {batch_size} "
+                f"with {batch_delay:.2f}s between batches"
+            )
+            for i in range(0, len(self.uris), batch_size):
+                batch = self.uris[i:i + batch_size]
+                for link_uri in batch:
+                    self.swarm._cfs[link_uri].open_link()
+                if i + batch_size < len(self.uris):
+                    time.sleep(batch_delay)
         except Exception as e:
             # Close node if one of the Crazyflies can not be found
             self.get_logger().info("Error!: One or more Crazyflies can not be found. ")
             self.get_logger().info("Check if you got the right URIs, if they are turned on" +
                                    " or if your script have proper access to a Crazyradio PA")
+            self.get_logger().info(str(e))
             exit()
     
     def _init_topics_and_services(self):
